@@ -1,0 +1,50 @@
+[
+  {
+    "_id": 1,
+    "title": "Cosas del Alma",
+    "description": "Libro de Olga Lara.",
+    "category": "Poemas",
+    "coverImage": "book-1.jpg",
+    "Price": 19.99
+  },
+  {
+    "_id": 2,
+    "title": "Reflexiones de un Incomprendido",
+    "description": "Cuento relacionado.",
+    "category": "Cuentos",
+    "coverImage": "book-2.jpg",
+    "Price": 9.9
+  },
+  {
+    "_id": 3,
+    "title": "El arte de Pensar",
+    "description": "Libro filosofico para el estimulo del pensamiento critico",
+    "category": "Cientifico",
+    "coverImage": "book-3.jpg",
+    "Price": 14.99
+  },
+  {
+    "_id": 4,
+    "title": "Abstract Art",
+    "description": "Libro para iniciar con el arte abastracto",
+    "category": "Arte",
+    "coverImage": "book-4.jpg",
+    "Price": 49.99
+  },
+  {
+    "_id": 5,
+    "title": "Analisis Matematicos",
+    "description": "Libro para matematica 1 y 2.",
+    "category": "Matematicas",
+    "coverImage": "book-5.jpg",
+    "Price": 17.99
+  },
+  {
+    "_id": 6,
+    "title": "Fundamentos de Algebra Lineal",
+    "description": "Fundamentos de Algebra Lineal para los primeros ciclos",
+    "category": "Matematicas",
+    "coverImage": "book-6.jpg",
+    "Price": 24.99
+  }
+]
