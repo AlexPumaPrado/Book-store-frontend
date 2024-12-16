@@ -46,8 +46,8 @@ export const CartPage = () => {
                     <li key={product._id} className="flex py-6">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                         <img
-                          alt=""
-                          src={`${getImgUrl(product?.coverImage)}`}
+                          alt={product.title}
+                          src={product.coverImage}
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
@@ -56,12 +56,12 @@ export const CartPage = () => {
                         <div>
                           <div className="flex flex-wrap justify-between text-base font-medium text-gray-900">
                             <h3>
-                              <Link to="/">{product?.title}</Link>
+                              <Link to={`/books/${product._id}`}>{product.title}</Link>
                             </h3>
-                            <p className="sm:ml-4">S/{product?.Price}</p>
+                            <p className="sm:ml-4">S/{product.Price}</p>
                           </div>
                           <p className="mt-1 text-sm text-gray-500 capitalize">
-                            <strong>Genero:</strong> {product?.category}
+                            <strong>Genero:</strong> {product.category}
                           </p>
                         </div>
                         <div className="flex flex-1 flex-wrap items-end justify-between space-y-2 text-sm">
@@ -95,9 +95,7 @@ export const CartPage = () => {
             <p>Subtotal</p>
             <p>S/{totalPrice ? totalPrice : 0}</p>
           </div>
-          <p className="mt-0.5 text-sm text-gray-500">
-            Shipping and taxes calculated at checkout.
-          </p>
+          <p className="mt-0.5 text-sm text-gray-500">Total calculado.</p>
           <div className="mt-6">
             <Link
               to="/checkout"
@@ -108,12 +106,12 @@ export const CartPage = () => {
           </div>
           <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
             <Link to="/">
-              or
+              o
               <button
                 type="button"
                 className="font-medium text-indigo-600 hover:text-indigo-500 ml-1"
               >
-                Continue Shopping
+                Continua comprando
                 <span aria-hidden="true"> &rarr;</span>
               </button>
             </Link>

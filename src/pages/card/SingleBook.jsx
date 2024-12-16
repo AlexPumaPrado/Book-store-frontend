@@ -24,11 +24,7 @@ export const SingleBook = () => {
 
       <div className="">
         <div>
-          <img
-            src={`${getImgUrl(book.coverImage)}`}
-            alt={book.title}
-            className="mb-8"
-          />
+          <img src={book.coverImage} alt={book.title} className="mb-8" />
         </div>
 
         <div className="mb-5">

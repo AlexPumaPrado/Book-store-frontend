@@ -85,12 +85,15 @@ const UpdateBook = () => {
           name="category"
           options={[
             { value: "", label: "Escoje una categoría" },
-            { value: "art", label: "Arte" },
-            { value: "Cientis", label: "Cientifico" },
-            { value: "poema", label: "Poemas" },
-            { value: "administration", label: "Administration" },
-            { value: "maths", label: "Matematicas" },
-            { value: "finance", label: "Finanzas" },
+            { value: "Arte", label: "Arte" },
+            { value: "Cientifico", label: "Cientifico" },
+            { value: "Poemas", label: "Poemas" },
+            { value: "Administracion", label: "Administration" },
+            { value: "Matematicas", label: "Matematicas" },
+            { value: "Contabilidad", label: "Contabilidad" },
+            { value: "Cuentos", label: "Cuentos" },
+            { value: "Letras", label: "Letras" },
+            { value: "Ingenieria", label: "Ingenieria" },
           ]}
           register={register}
         />

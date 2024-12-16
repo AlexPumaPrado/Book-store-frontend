@@ -10,10 +10,10 @@ import { useSelector } from "react-redux";
 import { useAuth } from "../context/AuthContext";
 
 const navigation = [
-  { name: "Dashboard", href: "/dashboard" },
-  { name: "Orders", href: "/order" },
-  { name: "Card Page", href: "/cart" },
+  { name: "Carro de compra", href: "/cart" },
+  { name: "Historial", href: "/order" },
   { name: "Check Out", href: "/checkout" },
+  { name: "Admin", href: "/dashboard" },
 ];
 
 const Navbar = () => {
@@ -33,15 +33,6 @@ const Navbar = () => {
           <Link to="/">
             <FaBars className="size-8" />
           </Link>
-          <div className="flex items-center md:gap-2">
-            <RiSearchFill className="size-8" />
-            <input
-              type="text"
-              placeholder="Busca aqui"
-              className="bg-[#FAFAFA] w-full py-1 md:px-8 px-6 rounded-md
-          focus:outline-none"
-            />
-          </div>
         </div>
 
         {/*Right Side*/}

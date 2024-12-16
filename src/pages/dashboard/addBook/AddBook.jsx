@@ -11,20 +11,28 @@ const AddBook = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const [imageFile, setimageFile] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
   const [addBook, { isLoading, isError }] = useAddBookMutation();
-  const [imageFileName, setimageFileName] = useState("");
+  const [imageFileName, setImageFileName] = useState("");
+
   const onSubmit = async (data) => {
-    const newBookData = {
-      ...data,
-      coverImage: imageFileName,
-    };
+    const formData = new FormData();
+    formData.append("title", data.title);
+    formData.append("description", data.description);
+    formData.append("category", data.category);
+    formData.append("Price", data.Price);
+
+    // Append the image to the FormData object
+    if (imageFile) {
+      formData.append("coverImage", imageFile);
+    }
+
     try {
-      await addBook(newBookData).unwrap();
+      await addBook(formData).unwrap();
       alert("Libro añadido");
       reset();
-      setimageFileName("");
-      setimageFile(null);
+      setImageFileName("");
+      setImageFile(null);
     } catch (error) {
       console.error(error);
       alert("Failed to add book. Please try again.");
@@ -33,13 +41,12 @@ const AddBook = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      setimageFile(file);
-      setimageFileName(file.name);
-    }
+    setImageFile(file);
+    setImageFileName(file.name);
   };
+
   return (
-    <div className="max-w-lg   mx-auto md:p-6 p-3 bg-white rounded-lg shadow-md">
+    <div className="max-w-lg mx-auto md:p-6 p-3 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Add New Book</h2>
 
       {/* Form starts here */}
@@ -67,17 +74,21 @@ const AddBook = () => {
           name="category"
           options={[
             { value: "", label: "Escoje una categoría" },
-            { value: "art", label: "Arte" },
-            { value: "Cientis", label: "Cientifico" },
-            { value: "poema", label: "Poemas" },
-            { value: "administration", label: "Administration" },
-            { value: "maths", label: "Matematicas" },
-            { value: "finance", label: "Finanzas" },
+            { value: "Arte", label: "Arte" },
+            { value: "Cientifico", label: "Cientifico" },
+            { value: "Poemas", label: "Poemas" },
+            { value: "Administracion", label: "Administration" },
+            { value: "Matematicas", label: "Matematicas" },
+            { value: "Contabilidad", label: "Contabilidad" },
+            { value: "Cuentos", label: "Cuentos" },
+            { value: "Letras", label: "Letras" },
+            { value: "Ingenieria", label: "Ingenieria" },
             // Add more options as needed
           ]}
           register={register}
         />
-        {/*Price */}
+
+        {/* Price */}
         <InputField
           label="Price"
           name="Price"

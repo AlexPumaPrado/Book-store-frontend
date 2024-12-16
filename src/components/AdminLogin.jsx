@@ -42,7 +42,7 @@ const AdminLogin = () => {
       alert("Admin Login successful!");
       navigate("/dashboard");
     } catch (error) {
-      setMessage("Please provide a valid email and password");
+      setMessage("Por favor ingrese un Usuario y Password correcto");
       console.error(error);
     }
   };
@@ -57,7 +57,7 @@ const AdminLogin = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="username"
             >
-              Username
+              Admin Usuario
             </label>
             <input
               {...register("username", { required: true })}
